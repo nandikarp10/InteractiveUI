@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var name: String = ""
-    @State private var textTitle = "What is your name?"
+    @State private var ID: String = ""
+    @State private var textTitle = "Answer the following questions"
     
     var body: some View {
         VStack {
@@ -19,8 +20,12 @@ struct ContentView: View {
                 .multilineTextAlignment(.center)
                 .font(.title)
                 .border(Color.gray, width:1)
-            Button("Submit Name"){
-                textTitle = "Welcome, \(name)!"
+            TextField("Type your ID here...", text: $ID)
+                .multilineTextAlignment(.center)
+                .font(.title)
+                .border(Color.gray, width:1)
+            Button("Submit"){
+                textTitle = "Thank you,  \(name) for your response!"
             }
             .font(.title2)
             .buttonStyle(.borderedProminent)
